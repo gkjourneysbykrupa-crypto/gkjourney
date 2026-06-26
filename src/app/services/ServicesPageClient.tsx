@@ -234,7 +234,7 @@ export default function ServicesPageClient() {
         <div className="absolute inset-0 transition-transform duration-[3s] ease-out scale-105">
           <Image
             src="https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=2000&q=85"
-            alt="Services Hero Background"
+            alt="GK Journeys - Our Travel Services"
             fill
             priority
             quality={85}
@@ -317,7 +317,7 @@ export default function ServicesPageClient() {
           <div className="absolute inset-0">
             <Image
               src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=2000&q=80"
-              alt="Ready to Travel Banner"
+              alt="GK Journeys - Ready to Plan Your Journey"
               fill
               quality={80}
               className="object-cover object-center"

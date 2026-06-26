@@ -3,14 +3,14 @@ import { DestinationSections } from "./DestinationSections";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Destinations | GK Journeys",
-  description: "Explore our handpicked travel destinations across Kerala, Karnataka, Tamil Nadu, Goa, and North India. Personalized travel planning by GK Journeys, Mysore.",
+  title: "Destinations | GK Journeys – Karnataka, Kerala, Goa, Tamil Nadu & North India Tour Packages",
+  description: "Explore handpicked travel destinations across Kerala, Karnataka, Tamil Nadu, Goa, and North India. Personalized tour packages by GK Journeys, Mysore.",
   alternates: { canonical: "/destinations" },
   openGraph: {
-    title: "Destinations | GK Journeys",
-    description: "Explore our handpicked travel destinations across Kerala, Karnataka, Tamil Nadu, Goa, and North India.",
+    title: "Destinations | GK Journeys – Karnataka, Kerala, Goa, Tamil Nadu & North India Tour Packages",
+    description: "Explore handpicked travel destinations across Kerala, Karnataka, Tamil Nadu, Goa, and North India. Personalized tour packages by GK Journeys, Mysore.",
     url: "/destinations",
-  }
+  },
 };
 
 const destinations = [
@@ -113,7 +113,7 @@ export default function DestinationsPage() {
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2000&auto=format&fit=crop"
-            alt="Destinations Hero Background"
+            alt="GK Journeys - Explore Our Travel Destinations"
             fill
             priority
             quality={80}

@@ -41,7 +41,7 @@ export function WhyChooseUs() {
         >
           <Image
             src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=2000&q=80"
-            alt="Why Choose Us Background"
+            alt="GK Journeys - Premium Travel Experiences"
             fill
             quality={80}
             className="object-cover object-center"

@@ -47,7 +47,7 @@ export function ContactPageClient() {
       <div className="container relative z-10 mx-auto px-4 lg:px-8">
         
         {/* Advanced Section Heading Animation */}
-        <div className="flex justify-center items-center mb-16 overflow-hidden h-24">
+        <h1 className="flex justify-center items-center mb-16 overflow-hidden h-24">
           <motion.div
             initial={{ x: "-150%", opacity: 0, filter: "blur(10px)" }}
             animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
@@ -65,7 +65,7 @@ export function ContactPageClient() {
           >
             Us
           </motion.div>
-        </div>
+        </h1>
 
         {/* Main Content — Fades in after header animation */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 xl:gap-16 max-w-7xl mx-auto">

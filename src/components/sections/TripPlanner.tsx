@@ -96,7 +96,7 @@ export function TripPlanner() {
         >
           <Image 
             src="https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?auto=format&fit=crop&w=2400&q=80"
-            alt="Trip Planner Background"
+            alt="GK Journeys - Plan Your Perfect Journey"
             fill
             quality={80}
             className="object-cover object-center"
@@ -144,7 +144,7 @@ export function TripPlanner() {
                   const done   = !!selections[stepKeys[i]];
                   const active = i === step;
                   return (
-                    <button key={label} onClick={() => setStep(i)} className="flex-1 text-center">
+                    <button key={label} onClick={() => setStep(i)} aria-label={`Step ${i + 1}: ${label}`} className="flex-1 text-center">
                       <div className={`h-1 rounded-full mb-2 transition-all duration-500 ${done ? "bg-primary" : active ? "bg-white/60" : "bg-white/15"}`} />
                       <span className={`text-xs font-semibold tracking-wide uppercase transition-colors ${active ? "text-white" : done ? "text-primary" : "text-white/40"}`}>
                         {done && !active
@@ -285,6 +285,7 @@ export function TripPlanner() {
                   <button
                     key={i}
                     onClick={() => setStep(i)}
+                    aria-label={`Go to step ${i + 1}`}
                     className={`rounded-full transition-all duration-300 ${i === step ? "w-6 h-2 bg-white" : "w-2 h-2 bg-white/30 hover:bg-white/50"}`}
                   />
                 ))}

@@ -7,13 +7,13 @@ import { MissionVision } from "@/components/sections/MissionVision";
 export const metadata: Metadata = {
   title: "About GK Journeys | Krupa P Murthy – Mysore Travel Agency",
   description:
-    "Learn about GK Journeys, an MSME registered travel company from Mysore, Karnataka. Founded by Krupa P Murthy with a mission to deliver personalized, memorable travel experiences.",
+    "Learn about GK Journeys, an MSME registered travel company from Mysore, Karnataka. Founded by Krupa P Murthy with a mission to deliver personalized, memorable travel experiences across India.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About GK Journeys",
-    description: "Learn about GK Journeys, an MSME registered travel company from Mysore.",
+    title: "About GK Journeys | Krupa P Murthy – Mysore Travel Agency",
+    description: "Learn about GK Journeys, an MSME registered travel company from Mysore, Karnataka. Founded by Krupa P Murthy.",
     url: "/about",
-  }
+  },
 };
 
 export default function AboutPage() {
@@ -24,7 +24,7 @@ export default function AboutPage() {
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2000&auto=format&fit=crop"
-            alt="About Us Background"
+            alt="GK Journeys - About Our Travel Agency in Mysore"
             fill
             priority
             quality={80}

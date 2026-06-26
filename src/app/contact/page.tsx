@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { ContactPageClient } from "./ContactPageClient";
 
 export const metadata: Metadata = {
-  title: "Contact GK Journeys | Book Your Next Trip",
+  title: "Contact GK Journeys | Mysore Travel Agency – Book Your Trip",
   description:
-    "Get in touch with GK Journeys, Mysore for personalized tour packages, hotel bookings, and travel inquiries. Contact Krupa P Murthy via WhatsApp, Email, or Phone.",
+    "Get in touch with GK Journeys, Mysore for personalized tour packages, hotel bookings, and travel inquiries. Call, WhatsApp, or email Krupa P Murthy to plan your journey.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact GK Journeys",
-    description: "Get in touch with GK Journeys, Mysore for personalized tour packages.",
+    title: "Contact GK Journeys | Mysore Travel Agency – Book Your Trip",
+    description: "Get in touch with GK Journeys, Mysore for personalized tour packages, hotel bookings, and travel inquiries.",
     url: "/contact",
   },
 };
