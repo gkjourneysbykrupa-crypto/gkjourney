@@ -70,6 +70,7 @@ export function Footer() {
               {[
                 { name: "Home",         href: "/" },
                 { name: "Destinations", href: "/destinations" },
+                { name: "Services",     href: "/services" },
                 { name: "About Us",     href: "/about" },
                 { name: "Contact",      href: "/contact" },
               ].map((l) => (
@@ -120,16 +121,16 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:gkjourneysbykrupa@gmail.com"
+                  href="mailto:Gkjourneysbykrupa@gmail.com"
                   className="flex items-start gap-2.5 text-white/60 hover:text-white text-sm transition-colors font-light break-all"
                 >
                   <span className="text-[#C9A227] flex-shrink-0">📧</span>
-                  gkjourneysbykrupa@gmail.com
+                  Gkjourneysbykrupa@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2.5 text-white/60 text-sm font-light">
-                <span className="text-[#C9A227] flex-shrink-0">📍</span>
-                Mysore, Karnataka
+                <span className="text-[#C9A227] flex-shrink-0 mt-0.5">📍</span>
+                <span>#544, 5th Main, 5th Cross,<br />Bogadi 2nd Stage North,<br />Mysuru, Karnataka 570026</span>
               </li>
             </ul>
             <div className="mt-5 inline-flex items-center gap-1.5 bg-white/5 text-white/80 text-[11px] font-semibold px-3 py-1.5 rounded-full border border-white/10">

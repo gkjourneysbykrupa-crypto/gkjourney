@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 // High-quality, clearly visible travel landscape (Kerala backwaters)
 const bgImage = "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=85&w=2400&auto=format&fit=crop";
@@ -211,6 +212,16 @@ export function EssentialServices() {
             </motion.a>
           ))}
         </motion.div>
+
+        {/* Internal Link to Services Overview */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white/15 hover:bg-white text-white hover:text-gray-900 border border-white/30 backdrop-blur-md text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
+          >
+            Explore All Travel Services &amp; Packages →
+          </Link>
+        </div>
 
       </div>
     </section>

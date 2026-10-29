@@ -98,6 +98,7 @@ export function TripPlanner() {
             src="https://images.unsplash.com/photo-1596895111956-bf1cf0599ce5?auto=format&fit=crop&w=2400&q=80"
             alt="GK Journeys - Plan Your Perfect Journey"
             fill
+            sizes="100vw"
             quality={80}
             className="object-cover object-center"
           />

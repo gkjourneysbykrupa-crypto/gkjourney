@@ -43,6 +43,7 @@ export function WhyChooseUs() {
             src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=2000&q=80"
             alt="GK Journeys - Premium Travel Experiences"
             fill
+            sizes="100vw"
             quality={80}
             className="object-cover object-center"
           />

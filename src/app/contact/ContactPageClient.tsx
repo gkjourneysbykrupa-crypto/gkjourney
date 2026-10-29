@@ -3,7 +3,6 @@
 import { useState, useRef } from "react";
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
-import emailjs from "@emailjs/browser";
 import { MapPin, Phone, Mail, MessageCircle, Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 
 export function ContactPageClient() {
@@ -35,6 +34,7 @@ export function ContactPageClient() {
             src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=2400&q=85"
             alt="Contact Background - Kerala Backwaters"
             fill
+            sizes="100vw"
             quality={85}
             className="object-cover object-center"
           />
@@ -99,7 +99,7 @@ export function ContactPageClient() {
               <ContactCard 
                 icon={<Phone className="w-6 h-6 text-primary" />}
                 title="Phone Call"
-                subtitle="+91 78920 50273 · Mon–Sat 9AM–9PM"
+                subtitle="+91 78920 50273 · Daily 10:00 AM–5:30 PM"
                 href="tel:+917892050273"
                 hoverColor="hover:border-primary/50 hover:shadow-[0_0_20px_rgba(15,139,115,0.15)]"
               />
@@ -109,8 +109,8 @@ export function ContactPageClient() {
               <ContactCard 
                 icon={<Mail className="w-6 h-6 text-[#C9A227]" />}
                 title="Email"
-                subtitle="gkjourneysbykrupa@gmail.com"
-                href="mailto:gkjourneysbykrupa@gmail.com"
+                subtitle="Gkjourneysbykrupa@gmail.com"
+                href="mailto:Gkjourneysbykrupa@gmail.com"
                 hoverColor="hover:border-[#C9A227]/50 hover:shadow-[0_0_20px_rgba(201,162,39,0.15)]"
               />
             </motion.div>
@@ -122,7 +122,19 @@ export function ContactPageClient() {
               <div>
                 <p className="font-semibold text-sm text-white mb-1">Office Address</p>
                 <p className="text-white/80 text-sm leading-relaxed font-light">
-                  #544, 5th Cross, Bogadi 2nd Stage North,<br />Mysore, Karnataka – 570026
+                  #544, G K JOURNEYS, Bogadi 2nd Stage North,<br />5th Main, 5th Cross, Mysuru, Karnataka – 570026
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="flex items-center gap-4 bg-white/10 border border-white/20 p-4 rounded-2xl backdrop-blur-md">
+              <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center flex-shrink-0 text-white text-base">
+                🗣️
+              </div>
+              <div>
+                <p className="font-semibold text-xs text-white uppercase tracking-wider mb-0.5">Languages Supported</p>
+                <p className="text-white/80 text-xs font-light">
+                  Kannada, English, and Tamil — feel free to call or WhatsApp in your preferred language.
                 </p>
               </div>
             </motion.div>
@@ -207,6 +219,7 @@ function InquiryForm({ isVisible }: { isVisible: boolean }) {
     setSubmitStatus("idle");
 
     try {
+      const emailjs = (await import("@emailjs/browser")).default;
       await emailjs.sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
@@ -377,6 +390,9 @@ function InquiryForm({ isVisible }: { isVisible: boolean }) {
             </>
           )}
         </button>
+        <p className="text-center text-white/60 text-xs mt-3 font-light leading-relaxed">
+          We respect your privacy. Your contact details are used solely to respond to your travel inquiry and plan your itinerary.
+        </p>
       </motion.div>
     </motion.form>
   );

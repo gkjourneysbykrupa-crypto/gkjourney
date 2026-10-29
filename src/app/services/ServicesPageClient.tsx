@@ -237,6 +237,7 @@ export default function ServicesPageClient() {
             alt="GK Journeys - Our Travel Services"
             fill
             priority
+            sizes="100vw"
             quality={85}
             className="object-cover object-center"
           />
@@ -319,6 +320,7 @@ export default function ServicesPageClient() {
               src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=2000&q=80"
               alt="GK Journeys - Ready to Plan Your Journey"
               fill
+              sizes="100vw"
               quality={80}
               className="object-cover object-center"
             />

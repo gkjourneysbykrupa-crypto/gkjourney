@@ -3,14 +3,43 @@ import { DestinationSections } from "./DestinationSections";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Destinations | GK Journeys – Karnataka, Kerala, Goa, Tamil Nadu & North India Tour Packages",
-  description: "Explore handpicked travel destinations across Kerala, Karnataka, Tamil Nadu, Goa, and North India. Personalized tour packages by GK Journeys, Mysore.",
+  title: "Tour Destinations | G K JOURNEYS",
+  description:
+    "Explore handpicked travel destinations across Karnataka, Kerala, Tamil Nadu, Goa, and North India. Personalized tour planning from Mysuru by G K JOURNEYS.",
   alternates: { canonical: "/destinations" },
   openGraph: {
-    title: "Destinations | GK Journeys – Karnataka, Kerala, Goa, Tamil Nadu & North India Tour Packages",
-    description: "Explore handpicked travel destinations across Kerala, Karnataka, Tamil Nadu, Goa, and North India. Personalized tour packages by GK Journeys, Mysore.",
+    title: "Tour Destinations | G K JOURNEYS",
+    description:
+      "Explore handpicked travel destinations across Karnataka, Kerala, Tamil Nadu, Goa, and North India. Personalized tour planning from Mysuru by G K JOURNEYS.",
     url: "/destinations",
+    siteName: "G K JOURNEYS",
+    type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tour Destinations | G K JOURNEYS",
+    description:
+      "Handpicked travel destinations across Karnataka, Kerala, Tamil Nadu, Goa, and North India with custom tour planning from Mysuru.",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.gkjourneys.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Destinations",
+      "item": "https://www.gkjourneys.com/destinations"
+    }
+  ]
 };
 
 const destinations = [
@@ -20,7 +49,7 @@ const destinations = [
     tagline: "Land of Heritage & Nature",
     description:
       "Karnataka is a rich tapestry of ancient temples, royal palaces, pristine beaches, and wildlife sanctuaries. From the heritage city of Mysore to the misty hills of Chikmagalur — Karnataka offers something for every kind of traveler.",
-    image: "/images/mysore-palace.png",
+    image: "/images/mysore-palace.webp",
     places: [
       { name: "Mysore", desc: "Royal palaces, silk markets, and Dasara festival" },
       { name: "Coorg", desc: "Coffee plantations, waterfalls, and misty hills" },
@@ -41,7 +70,7 @@ const destinations = [
     tagline: "God's Own Country",
     description:
       "Kerala is a tropical paradise of backwater canals, lush hill stations, Ayurveda retreats, and pristine beaches. From the tea gardens of Munnar to the serene houseboat experiences of Alleppey — Kerala is a journey into nature and soul.",
-    image: "/images/kerala.png",
+    image: "/images/kerala.webp",
     places: [
       { name: "Munnar", desc: "Rolling tea gardens, mist and cool mountain air" },
       { name: "Alleppey", desc: "Iconic houseboat stays on tranquil backwaters" },
@@ -58,7 +87,7 @@ const destinations = [
     tagline: "Sun, Sand & Soul",
     description:
       "Goa is India's pocket of paradise — where golden beaches meet Portuguese heritage, fresh seafood, vibrant markets, and a spirit that refuses to slow down. Perfect for couples, friends, and families alike.",
-    image: "/images/goa.png",
+    image: "/images/goa.webp",
     places: [
       { name: "North Goa", desc: "Baga, Calangute, Anjuna beaches and vibrant nightlife" },
       { name: "South Goa", desc: "Palolem, Colva beaches — peaceful and pristine" },
@@ -73,7 +102,7 @@ const destinations = [
     tagline: "The Dravidian Soul of India",
     description:
       "Tamil Nadu is where ancient Dravidian culture meets modern dynamism. From towering temple gopurams to misty hill stations and serene backwaters — Tamil Nadu is a journey through time and devotion.",
-    image: "/images/tamilnadu.png",
+    image: "/images/tamilnadu.webp",
     places: [
       { name: "Ooty", desc: "Queen of Hill Stations — tea gardens and toy train rides" },
       { name: "Kodaikanal", desc: "Princess of Hill Stations with stunning Coaker's Walk" },
@@ -93,7 +122,7 @@ const destinations = [
     tagline: "The Grand Story of India",
     description:
       "North India is a land of legends — the snow-capped Himalayas, royal Rajasthan palaces, the Taj Mahal's eternal love story, and the spiritual banks of the Ganges. A journey here is a journey into India's greatest chapters.",
-    image: "/images/northindia.png",
+    image: "/images/northindia.webp",
     places: [
       { name: "Rajasthan", desc: "Jaipur, Jodhpur, Udaipur — royal palaces and desert safaris" },
       { name: "Himachal Pradesh", desc: "Shimla, Manali, Spiti Valley — mountain magic" },
@@ -108,6 +137,11 @@ const destinations = [
 export default function DestinationsPage() {
   return (
     <div className="pb-20">
+      <script
+        id="breadcrumb-schema-destinations"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Page Hero */}
       <div className="relative h-[50vh] min-h-[400px] flex items-end overflow-hidden">
         <div className="absolute inset-0">
@@ -116,6 +150,7 @@ export default function DestinationsPage() {
             alt="GK Journeys - Explore Our Travel Destinations"
             fill
             priority
+            sizes="100vw"
             quality={80}
             className="object-cover object-center"
           />

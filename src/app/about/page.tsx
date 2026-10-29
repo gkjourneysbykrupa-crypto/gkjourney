@@ -5,20 +5,51 @@ import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { MissionVision } from "@/components/sections/MissionVision";
 
 export const metadata: Metadata = {
-  title: "About GK Journeys | Krupa P Murthy – Mysore Travel Agency",
+  title: "About G K JOURNEYS | Krupa P Murthy – Mysore Travel Agency",
   description:
-    "Learn about GK Journeys, an MSME registered travel company from Mysore, Karnataka. Founded by Krupa P Murthy with a mission to deliver personalized, memorable travel experiences across India.",
+    "Learn about G K JOURNEYS, an MSME registered travel company from Mysuru, Karnataka. Founded by Krupa P Murthy with a mission to deliver personalized travel experiences across India.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About GK Journeys | Krupa P Murthy – Mysore Travel Agency",
-    description: "Learn about GK Journeys, an MSME registered travel company from Mysore, Karnataka. Founded by Krupa P Murthy.",
+    title: "About G K JOURNEYS | Krupa P Murthy – Mysore Travel Agency",
+    description: "Learn about G K JOURNEYS, an MSME registered travel company from Mysuru, Karnataka. Founded by Krupa P Murthy.",
     url: "/about",
+    siteName: "G K JOURNEYS",
+    type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "About G K JOURNEYS | Krupa P Murthy – Mysore Travel Agency",
+    description: "Learn about G K JOURNEYS, an MSME registered travel company from Mysuru, Karnataka. Founded by Krupa P Murthy.",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.gkjourneys.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About Us",
+      "item": "https://www.gkjourneys.com/about"
+    }
+  ]
 };
 
 export default function AboutPage() {
   return (
     <>
+      <script
+        id="breadcrumb-schema-about"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Hero */}
       <div className="relative h-[45vh] min-h-[360px] flex items-end overflow-hidden">
         <div className="absolute inset-0">
@@ -27,6 +58,7 @@ export default function AboutPage() {
             alt="GK Journeys - About Our Travel Agency in Mysore"
             fill
             priority
+            sizes="100vw"
             quality={80}
             className="object-cover object-center"
           />

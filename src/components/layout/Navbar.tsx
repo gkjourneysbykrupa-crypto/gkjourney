@@ -42,14 +42,15 @@ export function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 z-50 group">
               <div className="relative h-12 w-12 rounded-full overflow-hidden border-2 border-white/30 shadow-lg">
-  <Image
-    src="/images/logo.jpeg"
-    alt="GK Journeys"
-    fill
-    className="object-cover"
-    priority
-  />
-</div>
+                <Image
+                  src="/images/logo.webp"
+                  alt="GK Journeys"
+                  fill
+                  sizes="48px"
+                  className="object-cover"
+                  priority
+                />
+              </div>
             </Link>
 
             {/* Desktop Nav */}
@@ -98,7 +99,9 @@ export function Navbar() {
             <button
               className="md:hidden z-50 p-2 flex flex-col gap-1.5 justify-center items-center w-10 h-10"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
+              aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-navigation"
             >
               <span className={cn(
                 "w-6 h-[2px] rounded-full transition-all duration-300", 
@@ -124,6 +127,10 @@ export function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            id="mobile-navigation"
+            aria-label="Mobile Navigation"
+            role="dialog"
+            aria-modal="true"
             initial={{ opacity: 0, y: "-100%" }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}

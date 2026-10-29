@@ -8,14 +8,21 @@ import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { TripPlanner } from "@/components/sections/TripPlanner";
 
 export const metadata: Metadata = {
-  title: "GK Journeys | Travel Agency in Mysore – Karnataka Tour Packages",
+  title: "G K JOURNEYS | Travel Agency in Mysore – Karnataka Tour Packages",
   description:
-    "GK Journeys is a trusted travel agency in Mysore offering customized tour packages across Karnataka, Kerala, Goa, Tamil Nadu & North India. Plan your perfect holiday with us.",
+    "G K JOURNEYS is a trusted travel agency in Mysuru (Mysore) offering customized tour packages across Karnataka, Kerala, Goa, Tamil Nadu & North India. Plan your perfect holiday with us.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "GK Journeys – Every Journey Tells A Story",
-    description: "Trusted travel agency in Mysore offering customized tour packages across India.",
+    title: "G K JOURNEYS – Every Journey Tells A Story",
+    description: "Trusted travel agency in Mysuru offering customized tour packages across India.",
     url: "/",
+    siteName: "G K JOURNEYS",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "G K JOURNEYS | Travel Agency in Mysore",
+    description: "Customized tour packages from Mysuru across Karnataka, Kerala, Goa, Tamil Nadu & North India.",
   },
 };
 
