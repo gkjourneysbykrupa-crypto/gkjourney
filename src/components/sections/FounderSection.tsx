@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const trustHighlights = [
   {
@@ -57,7 +58,7 @@ const fadeBlurUp = {
 
 export function FounderSection() {
   return (
-    <section className="py-20 md:py-24 relative bg-[#FAFAF9] overflow-hidden">
+    <section id="about-gk" className="py-20 md:py-24 relative bg-[#FAFAF9] overflow-hidden">
 
       {/* ── Animated Background: floating glass orbs + mesh gradients ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -101,20 +102,6 @@ export function FounderSection() {
           viewport={{ once: true }}
           className="absolute bottom-[22%] left-[10%] w-10 h-10 rounded-full bg-white/25 backdrop-blur-xl border border-white/30 shadow-md"
         />
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="absolute top-[55%] right-[8%] w-7 h-7 rounded-full bg-primary/[0.06] backdrop-blur-xl border border-primary/[0.08] shadow-sm"
-        />
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="absolute top-[12%] left-[18%] w-12 h-12 rounded-full bg-accent/[0.06] backdrop-blur-xl border border-accent/[0.08] shadow-sm"
-        />
       </div>
 
       {/* ── Content ── */}
@@ -130,40 +117,48 @@ export function FounderSection() {
           {/* Label */}
           <motion.p
             variants={fadeBlurUp}
-            className="text-primary text-[11px] font-bold tracking-[0.35em] uppercase mb-5"
+            className="text-primary text-[11px] font-bold tracking-[0.35em] uppercase mb-4"
           >
-            Founder&apos;s Vision
+            About G K JOURNEYS · Mysuru
           </motion.p>
 
-          {/* Heading — reduced ~20 % from previous */}
+          {/* Heading */}
           <motion.h2
             variants={fadeBlurUp}
-            className="text-3xl md:text-4xl lg:text-[2.75rem] font-serif text-gray-900 leading-snug mb-6"
+            className="text-3xl md:text-4xl lg:text-[2.75rem] font-serif text-gray-900 leading-snug mb-5"
           >
-            A Personal Commitment to{" "}
-            <span className="italic font-light text-primary">Better Travel</span>
+            Personalized Travel Planning with a{" "}
+            <span className="italic font-light text-primary">Local Touch</span>
           </motion.h2>
 
           {/* Thin decorative divider */}
-          <motion.div variants={fadeBlurUp} className="flex justify-center mb-7">
+          <motion.div variants={fadeBlurUp} className="flex justify-center mb-6">
             <div className="w-12 h-px bg-primary/25" />
           </motion.div>
 
-          {/* Quote — tighter, smaller text */}
+          {/* Context Paragraph */}
           <motion.p
             variants={fadeBlurUp}
-            className="text-gray-500 text-base md:text-[17px] font-light leading-[1.8] italic max-w-2xl mx-auto mb-8"
+            className="text-gray-600 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-6"
           >
-             &ldquo;GK Journeys started with one simple idea: travel planning should be personal, not pushy. I handle every trip myself — from your first call to sharing driver and accommodation details. No call centers, no hidden costs. Just clear plans, fair pricing, and trips you&apos;ll actually remember.&rdquo;
-</motion.p>
+            G K JOURNEYS is an MSME-registered travel agency located in Bogadi 2nd Stage North, Mysuru. Founded and managed by Krupa P Murthy, we specialize in customized tour packages and personalized itinerary planning for families, couples, and groups traveling across Karnataka, Kerala, Tamil Nadu, Goa, and North India.
+          </motion.p>
+
+          {/* Quote */}
+          <motion.p
+            variants={fadeBlurUp}
+            className="text-gray-500 text-base md:text-[17px] font-light leading-[1.8] italic max-w-2xl mx-auto mb-8 bg-white/60 backdrop-blur-sm border border-gray-100 p-6 rounded-2xl shadow-sm"
+          >
+            &ldquo;GK Journeys was founded on a simple principle: travel planning should be personal, transparent, and thoughtful. As a local travel planner in Mysore, I coordinate every journey myself — from your initial consultation to verified driver arrangements and comfortable stays. No call centers, no inflated markups. Just honest advice, fair pricing, and trips you&apos;ll truly cherish.&rdquo;
+          </motion.p>
 
           {/* Founder signature block */}
-          <motion.div variants={fadeBlurUp} className="mb-10">
+          <motion.div variants={fadeBlurUp} className="mb-8">
             <div className="font-serif text-xl md:text-2xl text-primary italic mb-0.5">
               Krupa P Murthy
             </div>
             <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-gray-400">
-              Founder &amp; Director
+              Founder &amp; Travel Planner · Mysuru
             </div>
           </motion.div>
 
@@ -175,12 +170,12 @@ export function FounderSection() {
           {/* Trust highlight pills */}
           <motion.div
             variants={fadeBlurUp}
-            className="flex flex-wrap items-center justify-center gap-2.5 md:gap-3"
+            className="flex flex-wrap items-center justify-center gap-2.5 md:gap-3 mb-10"
           >
             {trustHighlights.map((h) => (
               <div
                 key={h.title}
-                className="flex items-center gap-1.5 bg-white/50 backdrop-blur-md border border-white/70 px-3.5 py-2 rounded-full shadow-[0_1px_6px_rgb(0,0,0,0.03)] hover:shadow-[0_4px_14px_rgb(0,0,0,0.06)] hover:-translate-y-px transition-all duration-300"
+                className="flex items-center gap-1.5 bg-white/80 backdrop-blur-md border border-gray-200/80 px-3.5 py-2 rounded-full shadow-[0_1px_6px_rgb(0,0,0,0.03)] hover:shadow-[0_4px_14px_rgb(0,0,0,0.06)] hover:-translate-y-px transition-all duration-300"
               >
                 <span className="text-primary">{h.icon}</span>
                 <span className="text-xs font-medium text-gray-700 tracking-wide">
@@ -188,6 +183,16 @@ export function FounderSection() {
                 </span>
               </div>
             ))}
+          </motion.div>
+
+          {/* Internal Link to About Page */}
+          <motion.div variants={fadeBlurUp}>
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-white hover:bg-gray-50 text-gray-800 border border-gray-200 text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-sm hover:shadow-md"
+            >
+              About G K JOURNEYS →
+            </Link>
           </motion.div>
 
         </motion.div>

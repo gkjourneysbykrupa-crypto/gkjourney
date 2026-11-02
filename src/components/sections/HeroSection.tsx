@@ -70,8 +70,8 @@ export function HeroSection() {
               transition={{ duration: 0.8 }}
               className="-translate-y-10 mb-2"
             >
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-white/90 text-[11px] font-bold tracking-[0.2em] text-[#123A67] uppercase shadow-sm">
-                Travel Agency in Mysuru · Custom Tour Planning
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/85 backdrop-blur-md border border-white/90 text-[11px] font-bold tracking-[0.2em] text-[#123A67] uppercase shadow-sm">
+                Travel Agency in Mysuru · Personalized Trip Planning
               </span>
             </motion.div>
 
@@ -91,17 +91,17 @@ export function HeroSection() {
   text-3xl
   sm:text-5xl
   md:text-6xl
-  lg:text-[4.5rem]
+  lg:text-[4.2rem]
   font-bold
-  leading-[1.05]
+  leading-[1.1]
   tracking-tight
   text-[#123A67]
   drop-shadow-[0_2px_4px_rgba(255,255,255,0.15)]
   mb-6
+  max-w-3xl
   "
             >
-              Every Journey <br />
-              Tells A Story
+              Customized Tour Packages from Mysore
             </motion.h1>
 
             {/* Description */}
@@ -116,20 +116,20 @@ export function HeroSection() {
               }}
               className="
     -translate-y-8
-    max-w-xl
+    max-w-2xl
     mx-auto
     text-center
     text-[#2F3E46]
     text-base
-    md:text-xl
+    md:text-lg
     font-medium
-    leading-8
+    leading-relaxed
     tracking-normal
     mb-7
     sm:mb-8
   "
             >
-              Customized tour packages from Mysuru across Karnataka, Kerala, Goa, Tamil Nadu, and North India — planned with personal care by Krupa P Murthy.
+              Discover memorable journeys with G K JOURNEYS. From Mysore sightseeing to customized holidays across Karnataka, Kerala, Tamil Nadu, Goa and beyond, we help plan trips around your travel preferences.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -142,7 +142,7 @@ export function HeroSection() {
                 duration: 1,
                 ease: [0.21, 0.47, 0.32, 0.98],
               }}
-              className="-translate-y-8 flex flex-col sm:flex-row items-center justify-center gap-14"
+              className="-translate-y-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-3"
             >
               {/* Primary Button */}
               <a
@@ -151,6 +151,7 @@ export function HeroSection() {
       group
       inline-flex
       items-center
+      justify-center
       gap-2
       rounded-full
       bg-[#E86A00]
@@ -165,9 +166,11 @@ export function HeroSection() {
       hover:bg-[#CF5F00]
       hover:scale-105
       hover:shadow-xl
+      w-full
+      sm:w-auto
     "
               >
-                PLAN MY JOURNEY
+                Plan Your Trip
 
                 <svg
                   className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
@@ -184,40 +187,56 @@ export function HeroSection() {
                 </svg>
               </a>
 
-              {/* WhatsApp Button */}
+              {/* Secondary Button */}
               <a
-                href="https://wa.me/917892050273"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/services"
                 className="
       group
       inline-flex
       items-center
-      gap-3
+      justify-center
+      gap-2
       rounded-full
-      bg-white
+      bg-white/90
+      backdrop-blur-md
+      border
+      border-white
       px-8
       py-3.5
       text-sm
       font-semibold
-      text-[#1F2937]
+      text-[#123A67]
       shadow-lg
       transition-all
       duration-300
-      hover:bg-gray-50
+      hover:bg-white
       hover:scale-105
       hover:shadow-xl
+      w-full
+      sm:w-auto
     "
               >
-                <svg
-                  className="w-5 h-5 text-[#25D366]"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" />
-                </svg>
+                Explore Our Services
+              </a>
+            </motion.div>
 
-                CHAT ON WHATSAPP
+            {/* Direct WhatsApp Quick Contact Link */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.8 }}
+              className="-translate-y-6"
+            >
+              <a
+                href="https://wa.me/917892050273?text=Hi%20Krupa!%20I%20would%20like%20to%20enquire%20about%20a%20tour%20package%20from%20Mysore."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/70 hover:bg-white text-xs font-medium text-gray-700 hover:text-gray-900 border border-white/80 shadow-sm transition-all duration-300"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
+                Prefer WhatsApp? Chat directly with Krupa: <span className="font-semibold text-[#123A67]">+91 78920 50273</span>
               </a>
             </motion.div>
           </motion.div>

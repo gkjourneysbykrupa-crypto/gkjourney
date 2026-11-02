@@ -2,28 +2,28 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Award, BadgeCheck, Star, MessageCircle } from "lucide-react";
+import { Compass, Sparkles, ShieldCheck, HeartHandshake } from "lucide-react";
 
 const benefits = [
   {
-    icon: <Award className="w-5 h-5 text-primary" />,
-    title: "Women Entrepreneur Led",
-    desc: "A passionate travel company founded and managed by a dedicated woman entrepreneur.",
+    icon: <Sparkles className="w-5 h-5 text-primary" />,
+    title: "Customized Itineraries",
+    desc: "Every tour package is tailored to your schedule, preferences, and pace instead of rigid, cookie-cutter templates.",
   },
   {
-    icon: <BadgeCheck className="w-5 h-5 text-primary" />,
-    title: "MSME Registered Business",
-    desc: "A verified and registered travel business you can trust with complete confidence.",
+    icon: <HeartHandshake className="w-5 h-5 text-primary" />,
+    title: "Personalized Travel Planning",
+    desc: "Founder Krupa P Murthy directly coordinates with you, offering transparent quotes and dedicated travel support.",
   },
   {
-    icon: <Star className="w-5 h-5 text-primary" />,
-    title: "Personalized Service",
-    desc: "Every traveler receives individual attention and customized travel recommendations.",
+    icon: <Compass className="w-5 h-5 text-primary" />,
+    title: "Local Mysore & Regional Expertise",
+    desc: "Authentic destination recommendations for Mysore sightseeing, Coorg coffee retreats, Ooty hills, and Kerala backwaters.",
   },
   {
-    icon: <MessageCircle className="w-5 h-5 text-primary" />,
-    title: "Direct WhatsApp Assistance",
-    desc: "Quick communication and support whenever you need help planning your trip.",
+    icon: <ShieldCheck className="w-5 h-5 text-primary" />,
+    title: "Reliable Travel Coordination",
+    desc: "Handpicked accommodations and verified drivers for sedans, SUVs, and Tempo Travellers ensuring safe, comfortable journeys.",
   },
 ];
 
@@ -41,7 +41,7 @@ export function WhyChooseUs() {
         >
           <Image
             src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?auto=format&fit=crop&w=2000&q=80"
-            alt="GK Journeys - Premium Travel Experiences"
+            alt="Why Choose GK Journeys - Travel Agency in Mysore"
             fill
             sizes="100vw"
             quality={80}
@@ -51,15 +51,13 @@ export function WhyChooseUs() {
         {/* Dark overlay for readability */}
         <div className="absolute inset-0 bg-black/60" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30" />
-        {/* Bottom fade — smooth transition into footer */}
-        <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#0F172A] to-transparent pointer-events-none" />
+        {/* Bottom fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#F8F6F2] to-transparent pointer-events-none" />
       </div>
-      
-
       
       <div className="relative z-10 container mx-auto px-4 lg:px-8">
         <motion.div
-          className="max-w-3xl mx-auto text-center mb-4"
+          className="max-w-3xl mx-auto text-center mb-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-40px" }}
@@ -79,9 +77,9 @@ export function WhyChooseUs() {
                 transition: { duration: 0.8, ease: "easeOut" },
               },
             }}
-            className="text-white/80 font-bold tracking-[0.3em] uppercase text-xs md:text-sm mb-1"
+            className="text-white/80 font-bold tracking-[0.3em] uppercase text-xs md:text-sm mb-2"
           >
-            Why Choose
+            The G K JOURNEYS Difference
           </motion.div>
 
           {/* Heading */}
@@ -95,9 +93,9 @@ export function WhyChooseUs() {
                 transition: { duration: 0.8, ease: "easeOut" },
               },
             }}
-            className="text-3xl md:text-4xl lg:text-5xl font-serif text-white mb-2"
+            className="text-3xl md:text-4xl lg:text-5xl font-serif text-white mb-3"
           >
-            <span className="italic text-primary">GK Journeys</span>
+            Why Choose Us for Your <span className="italic text-primary">Travel Planning</span>
           </motion.h2>
           
           {/* Subheading */}
@@ -111,9 +109,9 @@ export function WhyChooseUs() {
                 transition: { duration: 0.8, ease: "easeOut" },
               },
             }}
-            className="text-base md:text-lg text-white/90 max-w-xl mx-auto leading-snug"
+            className="text-base md:text-lg text-white/90 max-w-xl mx-auto leading-relaxed"
           >
-            Premium, trusted travel experiences crafted just for you.
+            A trusted, MSME-registered travel agency in Mysuru dedicated to crafting memorable holidays across India.
           </motion.p>
         </motion.div>
 
@@ -139,17 +137,17 @@ export function WhyChooseUs() {
                   transition: { duration: 0.7, ease: "easeOut" },
                 },
               }}
-              className="h-full flex flex-col items-center justify-center bg-[rgba(255,255,255,0.08)] backdrop-blur-[12px] border border-white/20 rounded-2xl p-4 md:p-5 text-center transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_12px_30px_rgba(0,0,0,0.3)] hover:border-white/40 hover:bg-[rgba(255,255,255,0.12)] group shadow-lg"
+              className="h-full flex flex-col items-center justify-start bg-[rgba(255,255,255,0.08)] backdrop-blur-[12px] border border-white/20 rounded-2xl p-6 text-center transition-all duration-500 hover:-translate-y-1.5 hover:shadow-[0_12px_30px_rgba(0,0,0,0.3)] hover:border-white/40 hover:bg-[rgba(255,255,255,0.12)] group shadow-lg"
             >
-              <div className="flex items-center justify-center mb-3">
+              <div className="flex items-center justify-center mb-4">
                 <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white border border-white/10 group-hover:scale-110 group-hover:bg-primary/20 group-hover:text-primary transition-all duration-500 shadow-sm">
                   {b.icon}
                 </div>
               </div>
-              <h3 className="text-white font-semibold text-lg md:text-xl mb-1.5 tracking-wide">
+              <h3 className="text-white font-semibold text-lg mb-2 tracking-wide">
                 {b.title}
               </h3>
-              <p className="text-white/80 text-sm leading-snug">
+              <p className="text-white/80 text-sm leading-relaxed">
                 {b.desc}
               </p>
             </motion.div>

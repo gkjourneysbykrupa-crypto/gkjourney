@@ -8,35 +8,35 @@ const destinations = [
   {
     name: "Karnataka",
     id: "karnataka",
-    tagline: "One State. Many Worlds.",
+    tagline: "Mysore, Coorg & Hampi Heritage",
     img: "/images/mysore-palace.webp",
     icon: "🛕",
   },
   {
     name: "Kerala",
     id: "kerala",
-    tagline: "God's Own Country",
+    tagline: "Wayanad, Munnar & Backwaters",
     img: "/images/kerala.webp",
     icon: "🚣",
   },
   {
     name: "Goa",
     id: "goa",
-    tagline: "Sun. Sand. Serenity.",
+    tagline: "Beaches, Culture & Sunsets",
     img: "/images/goa.webp",
     icon: "🏖️",
   },
   {
     name: "Tamil Nadu",
     id: "tamil-nadu",
-    tagline: "Where Stories Never End",
+    tagline: "Ooty Hills & Ancient Temples",
     img: "/images/tamilnadu.webp",
     icon: "🏛️",
   },
   {
     name: "North India",
     id: "north-india",
-    tagline: "Majestic. Timeless. Divine.",
+    tagline: "Rajasthan Palaces & Himalayas",
     img: "/images/northindia.webp",
     icon: "🏔️",
   },
@@ -56,19 +56,28 @@ export function FeaturedDestinations() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center justify-center font-bold tracking-[0.2em] uppercase text-xs text-gray-500 mb-4"
+            className="inline-flex items-center justify-center font-bold tracking-[0.2em] uppercase text-xs text-primary mb-3"
           >
-            Explore India
+            Popular Tour Destinations from Mysore
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1, duration: 0.8 }}
-            className="text-4xl md:text-5xl font-serif text-gray-900 leading-tight"
+            className="text-4xl md:text-5xl font-serif text-gray-900 leading-tight mb-4"
           >
-            Beautiful <span className="text-primary italic">Destinations</span>
+            Explore Handpicked <span className="text-primary italic">Tour Destinations</span>
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="text-gray-600 text-sm md:text-base leading-relaxed"
+          >
+            From Mysore sightseeing and misty hill stations like Coorg and Ooty to the backwaters of Kerala and golden beaches of Goa, discover customized holiday packages planned from Mysuru.
+          </motion.p>
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -100,7 +109,7 @@ export function FeaturedDestinations() {
               <div
                 className="absolute inset-0 transition-transform duration-1000 ease-out group-hover:scale-110"
               >
-                <Image src={dest.img} alt={dest.name} fill sizes="(max-width: 768px) 100vw, 20vw" className="object-cover" />
+                <Image src={dest.img} alt={`${dest.name} Tour Packages from Mysore`} fill sizes="(max-width: 768px) 100vw, 20vw" className="object-cover" />
               </div>
               
               {/* Overlays */}
@@ -129,6 +138,16 @@ export function FeaturedDestinations() {
               </Link>
             </motion.div>
           ))}
+        </div>
+
+        {/* Internal Link to Destinations Page */}
+        <div className="mt-14 text-center">
+          <Link
+            href="/destinations"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gray-900 hover:bg-[#123A67] text-white text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
+          >
+            Discover Tour Destinations →
+          </Link>
         </div>
       </div>
     </section>

@@ -5,29 +5,29 @@ import Image from "next/image";
 
 const experiences = [
   {
-    title: "Family Getaways",
-    desc: "Create beautiful memories",
+    title: "Family Tour Packages",
+    desc: "Comfortable, relaxed itineraries for all generations",
     img: "https://plus.unsplash.com/premium_photo-1726866161832-3bf6b11d4cc1?q=85&w=800&auto=format&fit=crop",
   },
   {
-    title: "Honeymoon Escapes",
-    desc: "Romantic journeys crafted",
+    title: "Honeymoon Packages",
+    desc: "Romantic getaways to Ooty, Coorg & Kerala",
     img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=85&w=800&auto=format&fit=crop",
   },
   {
-    title: "Group Holidays",
-    desc: "Travel together, bond forever",
+    title: "Group Tour Packages",
+    desc: "Seamless group transport, stays & activities",
     img: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=85&w=800&auto=format&fit=crop",
   },
   {
-    title: "Adventure Trips",
-    desc: "Thrill, explore, experience",
-    img: "https://images.unsplash.com/photo-1522163182402-834f871fd851?q=85&w=800&auto=format&fit=crop",
+    title: "Mysore Sightseeing",
+    desc: "Palace heritage, Chamundi Hill & local culture",
+    img: "https://images.unsplash.com/photo-1548013146-72479768bada?q=85&w=800&auto=format&fit=crop",
   },
   {
-    title: "Cultural & Heritage",
-    desc: "Explore the soul of India",
-    img: "https://images.unsplash.com/photo-1548013146-72479768bada?q=85&w=800&auto=format&fit=crop",
+    title: "Coorg & Ooty Escapes",
+    desc: "Lush coffee estates, tea hills & cool mountain air",
+    img: "https://images.unsplash.com/photo-1522163182402-834f871fd851?q=85&w=800&auto=format&fit=crop",
   },
 ];
 
@@ -37,6 +37,14 @@ export function ExperienceCategories() {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center justify-center font-bold tracking-[0.2em] uppercase text-xs text-primary mb-3"
+          >
+            Personalized Travel Styles
+          </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -44,16 +52,16 @@ export function ExperienceCategories() {
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-5xl font-serif text-gray-900 leading-tight mb-4"
           >
-            Curated <span className="text-primary italic">Experiences</span>
+            Curated <span className="text-primary italic">Travel Experiences</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-gray-500 text-sm md:text-base"
+            className="text-gray-600 text-sm md:text-base leading-relaxed"
           >
-            Handpicked journeys designed around what matters most to you.
+            Handpicked tour packages from Mysore designed around your interests, travel pace, and preferred destinations.
           </motion.p>
         </div>
 
@@ -62,7 +70,7 @@ export function ExperienceCategories() {
           {experiences.map((exp, i) => (
             <motion.a
               key={exp.title}
-              href={`https://wa.me/917892050273?text=${encodeURIComponent(`Hi Krupa! I'm interested in ${exp.title}.`)}`}
+              href={`https://wa.me/917892050273?text=${encodeURIComponent(`Hi Krupa! I'm interested in planning ${exp.title} with GK Journeys.`)}`}
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 30 }}
@@ -75,7 +83,7 @@ export function ExperienceCategories() {
               <div
                 className="absolute inset-0 transition-transform duration-1000 ease-out group-hover:scale-110"
               >
-                <Image src={exp.img} alt={exp.title} fill sizes="(max-width: 768px) 100vw, 20vw" className="object-cover" />
+                <Image src={exp.img} alt={`${exp.title} - G K JOURNEYS Mysore`} fill sizes="(max-width: 768px) 100vw, 20vw" className="object-cover" />
               </div>
               
               {/* Overlays */}

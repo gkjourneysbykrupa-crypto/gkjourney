@@ -6,37 +6,59 @@ import { EssentialServices } from "@/components/sections/EssentialServices";
 import { FounderSection } from "@/components/sections/FounderSection";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { TripPlanner } from "@/components/sections/TripPlanner";
+import { FAQSection } from "@/components/sections/FAQSection";
+import { faqData } from "@/data/faqs";
 
 export const metadata: Metadata = {
-  title: "G K JOURNEYS | Travel Agency in Mysore – Karnataka Tour Packages",
+  title: "Travel Agency in Mysore | Customized Tour Packages – G K JOURNEYS",
   description:
-    "G K JOURNEYS is a trusted travel agency in Mysuru (Mysore) offering customized tour packages across Karnataka, Kerala, Goa, Tamil Nadu & North India. Plan your perfect holiday with us.",
+    "Plan memorable trips with G K JOURNEYS, a travel agency in Mysore. Explore customized tour packages, family holidays and trips to Coorg, Ooty, Kerala and more.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "G K JOURNEYS – Every Journey Tells A Story",
-    description: "Trusted travel agency in Mysuru offering customized tour packages across India.",
+    title: "Travel Agency in Mysore | Customized Tour Packages – G K JOURNEYS",
+    description:
+      "Plan memorable trips with G K JOURNEYS, a travel agency in Mysore. Explore customized tour packages, family holidays and trips to Coorg, Ooty, Kerala and more.",
     url: "/",
     siteName: "G K JOURNEYS",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "G K JOURNEYS | Travel Agency in Mysore",
-    description: "Customized tour packages from Mysuru across Karnataka, Kerala, Goa, Tamil Nadu & North India.",
+    title: "Travel Agency in Mysore | Customized Tour Packages – G K JOURNEYS",
+    description:
+      "Plan memorable trips with G K JOURNEYS, a travel agency in Mysore. Explore customized tour packages, family holidays and trips to Coorg, Ooty, Kerala and more.",
   },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqData.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    },
+  })),
 };
 
 export default function Home() {
   return (
     <>
+      <script
+        id="faq-schema-home"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <HeroSection />
       <FeaturedDestinations />
       <ExperienceCategories />
       <EssentialServices />
       <FounderSection />
       <WhyChooseUs />
-      <div className="py-8 bg-[#F8F6F2]" />
       <TripPlanner />
+      <FAQSection />
     </>
   );
 }

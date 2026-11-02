@@ -8,9 +8,9 @@ const bgImage = "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=
 
 const services = [
   { 
-    id: "domestic", 
-    title: "Domestic Tours", 
-    desc: "Explore incredible India",
+    id: "customized", 
+    title: "Customized Tour Planning", 
+    desc: "Personalized day-by-day itineraries tailored to your dates, preferences, and travel pace.",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
@@ -18,29 +18,19 @@ const services = [
     ) 
   },
   { 
-    id: "international", 
-    title: "International Tours", 
-    desc: "Dream. Plan. Discover.",
+    id: "mysore-sightseeing", 
+    title: "Mysore Sightseeing Packages", 
+    desc: "Curated local heritage tours covering Mysore Palace, Chamundi Hills, Brindavan Gardens & silk markets.",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ) 
-  },
-  { 
-    id: "honeymoon", 
-    title: "Honeymoon Packages", 
-    desc: "Romance made special",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 21l-8-4.5v-9L12 3l8 4.5v9l-8 4.5zM12 3v18" />
       </svg>
     ) 
   },
   { 
     id: "family", 
-    title: "Family Tours", 
-    desc: "Memories for a lifetime",
+    title: "Family Tour Packages", 
+    desc: "Relaxed itineraries with comfortable transport and verified stays suitable for children and seniors.",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -48,9 +38,19 @@ const services = [
     ) 
   },
   { 
+    id: "honeymoon", 
+    title: "Honeymoon Packages", 
+    desc: "Romantic escapes to Ooty, Coorg, Wayanad, and Munnar with scenic drives and private stays.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      </svg>
+    ) 
+  },
+  { 
     id: "group", 
-    title: "Group Tours", 
-    desc: "Together is better",
+    title: "Group Tour Packages", 
+    desc: "Coordinated logistics, Tempo Travellers, and group accommodations for friends, families & reunions.",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -59,8 +59,8 @@ const services = [
   },
   { 
     id: "corporate", 
-    title: "Corporate Tours", 
-    desc: "Travel for business",
+    title: "Corporate Travel", 
+    desc: "End-to-end management for team outings, executive offsites, conferences, and executive travel.",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -69,8 +69,8 @@ const services = [
   },
   { 
     id: "hotel", 
-    title: "Hotel Booking", 
-    desc: "Comfort stays",
+    title: "Hotel & Accommodation", 
+    desc: "Carefully vetted properties — from budget-friendly boutique stays to heritage resorts and homestays.",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -78,22 +78,22 @@ const services = [
     ) 
   },
   { 
-    id: "flight", 
-    title: "Flight Booking", 
-    desc: "Best options, best fares",
+    id: "vehicle", 
+    title: "Travel & Transport Coordination", 
+    desc: "Reliable sedans, spacious SUVs, and Tempo Travellers with professional drivers for outstation trips.",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
       </svg>
     ) 
   },
   { 
-    id: "vehicle", 
-    title: "Vehicle Rental", 
-    desc: "Ride with comfort",
+    id: "flight", 
+    title: "Flight & Domestic Travel Support", 
+    desc: "Advice on flight options, connecting routes, and complete logistics for smooth travel across India.",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ) 
   },
@@ -138,7 +138,7 @@ export function EssentialServices() {
             transition={{ duration: 1, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="text-white/80 text-xs font-bold tracking-[0.3em] uppercase mb-4"
           >
-            Comprehensive Support
+            Travel Agency in Mysore · Services
           </motion.p>
           <motion.h2
             variants={{
@@ -148,7 +148,7 @@ export function EssentialServices() {
             transition={{ duration: 1.2, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-[1.1] mb-6"
           >
-            Essential <span className="italic font-light">Travel Services</span>
+            Customized <span className="italic font-light">Travel Services</span>
           </motion.h2>
           <motion.p
             variants={{
@@ -158,7 +158,7 @@ export function EssentialServices() {
             transition={{ duration: 1, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="text-white/80 text-base md:text-lg tracking-wide font-light max-w-xl mx-auto"
           >
-            Beyond itineraries — we manage every logistical detail so you can travel with complete peace of mind.
+            From Mysore sightseeing to complete tour itineraries across Karnataka and South India, we coordinate every detail for a seamless holiday.
           </motion.p>
         </motion.div>
 
@@ -180,7 +180,7 @@ export function EssentialServices() {
           {services.map((svc) => (
             <motion.a
               key={svc.id}
-              href={`https://wa.me/917892050273?text=${encodeURIComponent(`Hi Krupa! I'm interested in ${svc.title}.`)}`}
+              href={`https://wa.me/917892050273?text=${encodeURIComponent(`Hi Krupa! I would like to enquire about ${svc.title} with GK Journeys.`)}`}
               target="_blank"
               rel="noopener noreferrer"
               variants={{
@@ -214,12 +214,12 @@ export function EssentialServices() {
         </motion.div>
 
         {/* Internal Link to Services Overview */}
-        <div className="mt-12 text-center">
+        <div className="mt-14 text-center">
           <Link
             href="/services"
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white/15 hover:bg-white text-white hover:text-gray-900 border border-white/30 backdrop-blur-md text-xs font-bold uppercase tracking-widest transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5"
           >
-            Explore All Travel Services &amp; Packages →
+            Explore Our Travel Services →
           </Link>
         </div>
 
