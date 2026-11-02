@@ -80,7 +80,7 @@ const services: Service[] = [
       "Energizing group travel experiences with coordinated logistics, group accommodations, and shared adventures.",
     features: ["Group Discounts", "Dedicated Coordinator", "Shared Transport", "Team Activities", "Flexible Group Size"],
     image:
-      "https://images.unsplash.com/photo-1539635278303-d4002c07bf10?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&w=900&q=80",
     accent: "from-violet-700/80 to-purple-900/90",
   },
   {
