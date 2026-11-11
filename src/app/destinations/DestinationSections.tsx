@@ -4,14 +4,20 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-type Place = { name: string; desc: string };
+type Place = {
+  name: string;
+  desc: string;
+  duration?: string;
+};
 
 type Destination = {
   id: string;
   name: string;
   tagline: string;
+  suggestedDuration?: string;
   description: string;
   image: string;
+  imageAlt?: string;
   places: Place[];
   highlights: string[];
 };
@@ -107,13 +113,13 @@ export function DestinationSections({ destinations }: { destinations: Destinatio
                 >
                   <div className="relative h-[320px] md:h-[440px] rounded-3xl shadow-2xl overflow-hidden">
                     <Image
-  src={dest.image}
-  alt={dest.name}
-  fill
-  sizes="(max-width: 768px) 100vw, 50vw"
-  className="object-cover object-center"
-  quality={90}
-/>
+                      src={dest.image}
+                      alt={dest.imageAlt || `${dest.name} Tour Destinations from Mysore`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover object-center"
+                      quality={90}
+                    />
                   </div>
                 </motion.div>
 
@@ -125,16 +131,23 @@ export function DestinationSections({ destinations }: { destinations: Destinatio
                   whileInView="visible"
                   viewport={{ once: true, margin: "-80px" }}
                 >
-                  {/* Tagline */}
-                  <motion.span
+                  {/* Tagline & Suggested Duration */}
+                  <motion.div
                     variants={tagVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="text-primary text-xs font-bold tracking-widest uppercase mb-2 block"
+                    className="flex flex-wrap items-center gap-2 mb-2"
                   >
-                    {dest.tagline}
-                  </motion.span>
+                    <span className="text-primary text-xs font-bold tracking-widest uppercase block">
+                      {dest.tagline}
+                    </span>
+                    {dest.suggestedDuration && (
+                      <span className="text-[11px] font-semibold text-[#123A67] bg-[#123A67]/10 border border-[#123A67]/15 px-2.5 py-0.5 rounded-full inline-flex items-center gap-1">
+                        ⏱️ {dest.suggestedDuration}
+                      </span>
+                    )}
+                  </motion.div>
 
                   {/* Heading */}
                   <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{dest.name}</h2>
@@ -145,7 +158,7 @@ export function DestinationSections({ destinations }: { destinations: Destinatio
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="text-gray-500 text-base leading-relaxed mb-6"
+                    className="text-gray-600 text-base leading-relaxed mb-6"
                   >
                     {dest.description}
                   </motion.p>
@@ -163,24 +176,42 @@ export function DestinationSections({ destinations }: { destinations: Destinatio
                   </div>
 
                   {/* Places */}
-                  <div className="space-y-3 mb-8">
+                  <div className="space-y-3 mb-6">
                     <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">
-                      Places We Cover
+                      Places We Cover &amp; Suggested Durations
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                       {dest.places.map((place) => (
                         <div
                           key={place.name}
-                          className="flex items-start gap-2.5 bg-gray-50 rounded-xl p-3"
+                          className="flex items-start gap-2.5 bg-gray-50 rounded-xl p-3 border border-gray-100"
                         >
-                          <span className="text-primary mt-0.5">📍</span>
-                          <div>
-                            <p className="text-sm font-semibold text-gray-900">{place.name}</p>
-                            <p className="text-xs text-gray-500">{place.desc}</p>
+                          <span className="text-primary mt-0.5 flex-shrink-0">📍</span>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center justify-between gap-2 mb-0.5">
+                              <p className="text-sm font-semibold text-gray-900 truncate">{place.name}</p>
+                              {place.duration && (
+                                <span className="text-[10px] font-medium text-emerald-700 bg-emerald-50 border border-emerald-100 px-1.5 py-0.5 rounded whitespace-nowrap flex-shrink-0">
+                                  {place.duration}
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-xs text-gray-500 leading-relaxed">{place.desc}</p>
                           </div>
                         </div>
                       ))}
                     </div>
+                  </div>
+
+                  {/* Contextual Service Cross-Links */}
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-8 text-xs text-gray-600 bg-gray-50/70 border border-gray-100 rounded-xl px-4 py-2.5">
+                    <span className="font-semibold text-gray-700">Need Travel Support?</span>
+                    <Link href="/services" className="text-primary hover:underline font-medium inline-flex items-center gap-1">
+                      Transport &amp; Cab Services →
+                    </Link>
+                    <Link href="/contact" className="text-gray-500 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+                      Custom Itinerary Enquiry →
+                    </Link>
                   </div>
 
                   {/* CTAs — animated last in sequence */}
@@ -193,7 +224,7 @@ export function DestinationSections({ destinations }: { destinations: Destinatio
                   >
                     <a
                       href={`https://wa.me/917892050273?text=${encodeURIComponent(
-                        `Hi Krupa! I'm interested in visiting ${dest.name}. Can you help me plan a personalized trip?`
+                        `Hi Krupa! I'm interested in visiting ${dest.name} from Mysore. Can you help me plan a personalized trip?`
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
