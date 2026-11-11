@@ -1,25 +1,25 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import { FounderSection } from "@/components/sections/FounderSection";
-import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
-import { MissionVision } from "@/components/sections/MissionVision";
+import { AboutClient } from "./AboutClient";
 
 export const metadata: Metadata = {
-  title: "About G K JOURNEYS | Krupa P Murthy – Mysore Travel Agency",
+  title: "About G K JOURNEYS | Travel Company & Planner in Mysore",
   description:
-    "Learn about G K JOURNEYS, an MSME registered travel company from Mysuru, Karnataka. Founded by Krupa P Murthy with a mission to deliver personalized travel experiences across India.",
+    "Learn about G K JOURNEYS, an MSME-registered travel company in Mysore founded by Krupa P Murthy. Discover our personalized tour planning philosophy and customer care.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About G K JOURNEYS | Krupa P Murthy – Mysore Travel Agency",
-    description: "Learn about G K JOURNEYS, an MSME registered travel company from Mysuru, Karnataka. Founded by Krupa P Murthy.",
+    title: "About G K JOURNEYS | Travel Company & Planner in Mysore",
+    description:
+      "Learn about G K JOURNEYS, an MSME-registered travel company in Mysore founded by Krupa P Murthy. Discover our personalized tour planning philosophy and customer care.",
     url: "/about",
     siteName: "G K JOURNEYS",
     type: "website",
+    locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About G K JOURNEYS | Krupa P Murthy – Mysore Travel Agency",
-    description: "Learn about G K JOURNEYS, an MSME registered travel company from Mysuru, Karnataka. Founded by Krupa P Murthy.",
+    title: "About G K JOURNEYS | Travel Company & Planner in Mysore",
+    description:
+      "Learn about G K JOURNEYS, an MSME-registered travel company in Mysore founded by Krupa P Murthy. Discover our personalized tour planning philosophy and customer care.",
   },
 };
 
@@ -42,6 +42,45 @@ const breadcrumbSchema = {
   ]
 };
 
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "@id": "https://www.gkjourneys.com/about#webpage",
+  "url": "https://www.gkjourneys.com/about",
+  "name": "About G K JOURNEYS | Travel Company & Planner in Mysore",
+  "description":
+    "Learn about G K JOURNEYS, an MSME-registered travel company in Mysore founded by Krupa P Murthy. Discover our personalized tour planning philosophy and customer care.",
+  "mainEntity": {
+    "@type": "TravelAgency",
+    "name": "G K JOURNEYS",
+    "alternateName": ["GK Journeys", "GK Journeys by Krupa"],
+    "url": "https://www.gkjourneys.com/",
+    "telephone": "+91 78920 50273",
+    "email": "Gkjourneysbykrupa@gmail.com",
+    "founder": {
+      "@type": "Person",
+      "name": "Krupa P Murthy",
+      "jobTitle": "Founder & Travel Planner"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "#544, G K JOURNEYS, Bogadi 2nd Stage North, 5th Main, 5th Cross",
+      "addressLocality": "Mysuru",
+      "addressRegion": "Karnataka",
+      "postalCode": "570026",
+      "addressCountry": "IN"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "India"
+    },
+    "sameAs": [
+      "https://www.instagram.com/gk_journeys",
+      "https://www.facebook.com/share/1DE5H3gi9b/"
+    ]
+  }
+};
+
 export default function AboutPage() {
   return (
     <>
@@ -50,36 +89,12 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      {/* Hero */}
-      <div className="relative h-[45vh] min-h-[360px] flex items-end overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2000&auto=format&fit=crop"
-            alt="GK Journeys - About Our Travel Agency in Mysore"
-            fill
-            priority
-            sizes="100vw"
-            quality={80}
-            className="object-cover object-center"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-        <div className="relative z-10 container pb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">Our Story</h1>
-          <p className="text-white/70 text-lg max-w-xl">
-  Every journey should tell a unique story. That&apos;s the belief I built GK Journeys on. As a young entrepreneur from Mysore, I saw a gap between the generic travel packages tourists were getting and the deeply personal, memorable experiences they deserved.
-</p>
-        </div>
-      </div>
-
-      {/* Mission & Vision */}
-      <MissionVision />
-
-      {/* Founder Section */}
-      <FounderSection />
-
-      {/* Why Choose Us */}
-      <WhyChooseUs />
+      <script
+        id="about-page-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
+      />
+      <AboutClient />
     </>
   );
 }
