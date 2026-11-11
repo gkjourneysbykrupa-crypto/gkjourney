@@ -2,6 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Map,
   Globe,
@@ -14,6 +15,15 @@ import {
   Car,
   ArrowRight,
 } from "lucide-react";
+
+// ── Verified Destination Anchor Mapping ────────────────────────────
+const destinationAnchorMap: Record<string, string> = {
+  "Kerala": "/destinations#kerala",
+  "Karnataka": "/destinations#karnataka",
+  "Tamil Nadu": "/destinations#tamil-nadu",
+  "Goa": "/destinations#goa",
+  "North India": "/destinations#north-india",
+};
 
 // ── Types ─────────────────────────────────────────────────────────
 type Service = {
@@ -198,14 +208,28 @@ function ServiceCard({ service }: { service: Service }) {
 
         {/* Feature pills */}
         <div className="flex flex-wrap gap-1.5 mb-6">
-          {features.slice(0, 4).map((f) => (
-            <span
-              key={f}
-              className="text-[10px] font-semibold text-white/80 bg-white/10 border border-white/15 px-2.5 py-1 rounded-full"
-            >
-              {f}
-            </span>
-          ))}
+          {features.slice(0, 4).map((f) => {
+            const anchor = destinationAnchorMap[f];
+            if (anchor) {
+              return (
+                <Link
+                  key={f}
+                  href={anchor}
+                  className="text-[10px] font-semibold text-white/90 bg-white/15 hover:bg-white/25 border border-white/20 hover:border-white/40 px-2.5 py-1 rounded-full transition-colors inline-flex items-center gap-1"
+                >
+                  {f} <span className="text-[9px] opacity-70">↗</span>
+                </Link>
+              );
+            }
+            return (
+              <span
+                key={f}
+                className="text-[10px] font-semibold text-white/80 bg-white/10 border border-white/15 px-2.5 py-1 rounded-full"
+              >
+                {f}
+              </span>
+            );
+          })}
           {features.length > 4 && (
             <span className="text-[10px] font-semibold text-white/60 bg-white/5 border border-white/10 px-2.5 py-1 rounded-full">
               +{features.length - 4} more
@@ -258,19 +282,19 @@ export default function ServicesPageClient() {
             variants={headingVariants}
             className="text-white/70 font-bold text-[10px] tracking-[0.25em] uppercase block mb-3"
           >
-            GK Journeys · Services
+            GK Journeys · Travel Agency in Mysuru
           </motion.span>
           <motion.h1
             variants={headingVariants}
-            className="font-serif text-4xl md:text-5xl lg:text-6xl text-white tracking-tight mb-4 leading-[1.1]"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight mb-4 leading-[1.1]"
           >
-            Our Travel Services
+            Travel Services &amp; Customized Tour Packages in Mysore
           </motion.h1>
           <motion.p
             variants={headingVariants}
             className="text-white/75 text-base md:text-lg font-light max-w-xl leading-relaxed"
           >
-            Personalized travel solutions designed for unforgettable journeys — from your first adventure to your grandest escape.
+            Personalized travel solutions and tour planning from Mysuru. From family holidays and honeymoon packages to outstation cabs and hotel stays across Karnataka, Kerala, Tamil Nadu, and beyond.
           </motion.p>
         </motion.div>
       </div>
@@ -303,6 +327,69 @@ export default function ServicesPageClient() {
           {services.map((service) => (
             <ServiceCard key={service.title} service={service} />
           ))}
+        </motion.div>
+      </div>
+
+      {/* ── Contextual Destinations Link Section ── */}
+      <div className="container mx-auto px-4 lg:px-8 pb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="bg-white rounded-3xl border border-gray-200/80 p-8 md:p-10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6"
+        >
+          <div className="max-w-2xl">
+            <span className="text-primary font-bold text-[10px] tracking-[0.22em] uppercase mb-1.5 block">
+              Popular Routes from Mysore
+            </span>
+            <h3 className="font-serif text-xl md:text-2xl text-gray-900 font-semibold mb-2">
+              Explore Destinations Planned with Our Travel Services
+            </h3>
+            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              Our travel planning covers top destinations departing from Mysuru. Discover customized itineraries, sightseeing circuits, and verified hotel stays:
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <Link
+                href="/destinations#karnataka"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-100 hover:bg-primary/10 text-gray-800 hover:text-primary text-xs font-medium transition-colors"
+              >
+                <span>🛕</span> Karnataka &amp; Coorg
+              </Link>
+              <Link
+                href="/destinations#kerala"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-100 hover:bg-primary/10 text-gray-800 hover:text-primary text-xs font-medium transition-colors"
+              >
+                <span>🌿</span> Kerala &amp; Wayanad
+              </Link>
+              <Link
+                href="/destinations#tamil-nadu"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-100 hover:bg-primary/10 text-gray-800 hover:text-primary text-xs font-medium transition-colors"
+              >
+                <span>🏛️</span> Ooty &amp; Tamil Nadu
+              </Link>
+              <Link
+                href="/destinations#goa"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-100 hover:bg-primary/10 text-gray-800 hover:text-primary text-xs font-medium transition-colors"
+              >
+                <span>🌊</span> Goa Getaways
+              </Link>
+              <Link
+                href="/destinations#north-india"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gray-100 hover:bg-primary/10 text-gray-800 hover:text-primary text-xs font-medium transition-colors"
+              >
+                <span>🏔️</span> North India &amp; Rajasthan
+              </Link>
+            </div>
+          </div>
+          <div className="flex-shrink-0">
+            <Link
+              href="/destinations"
+              className="inline-flex items-center justify-center gap-2 bg-[#123A67] hover:bg-primary text-white text-xs font-bold uppercase tracking-wider px-6 py-3.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300"
+            >
+              View All Destinations <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </motion.div>
       </div>
 
